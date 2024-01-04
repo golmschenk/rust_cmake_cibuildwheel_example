@@ -21,6 +21,7 @@ jobs:
         env:
           CIBW_BEFORE_ALL_LINUX: >
             curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y &&
+            source "$HOME/.cargo/env" &&
             rustup default stable
 
       - uses: actions/upload-artifact@v3
