@@ -8,7 +8,7 @@ requires = ["scikit-build-core==0.6.0"]
 build-backend = "scikit_build_core.build"
 
 [tool.cibuildwheel]
-only = "cp38-*"
+build = "cp38-*"
 build-verbosity = "3"
 
 [tool.scikit-build]
