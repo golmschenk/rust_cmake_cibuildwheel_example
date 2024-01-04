@@ -6,6 +6,10 @@ execute_process(
         COMMAND ls /home/runner/.cargo/bin
 )
 
+execute_process(
+        COMMAND ls /Users/runner/.cargo/bin/rustc
+)
+
 include(FetchContent)
 
 FetchContent_Declare(
