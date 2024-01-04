@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.27)
 project(rust_cmake_cibuildwheel)
 
+message(LOG "PATH: $ENV{PATH}")
+
 include(FetchContent)
 
 FetchContent_Declare(
