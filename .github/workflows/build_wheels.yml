@@ -20,7 +20,7 @@ jobs:
         uses: pypa/cibuildwheel@v2.16.2
         env:
           CIBW_BEFORE_ALL_LINUX: >
-            curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
+            curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y &&
             rustup default stable
 
       - uses: actions/upload-artifact@v3
