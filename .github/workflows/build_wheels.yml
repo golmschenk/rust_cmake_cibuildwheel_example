@@ -9,15 +9,14 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v3
 
       - uses: dtolnay/rust-toolchain@stable
 
-      - name: build_wheels_linux
-        if: runner.os == 'Linux'
+      - name: build_wheels
         uses: pypa/cibuildwheel@v2.16.2
 
       - uses: actions/upload-artifact@v3
