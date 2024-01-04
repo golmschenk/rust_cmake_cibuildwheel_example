@@ -7,7 +7,7 @@ execute_process(
 )
 
 execute_process(
-        COMMAND ls /Users/runner/.cargo/bin/rustc
+        COMMAND ls /Users/runner/.cargo/bin
 )
 
 include(FetchContent)
