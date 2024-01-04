@@ -19,7 +19,7 @@ jobs:
       - name: build_wheels
         uses: pypa/cibuildwheel@v2.16.2
         env:
-          CIBW_ENVIRONMENT_LINUX: PATH=$PATH:$(dirname $(which rustc))
+          CIBW_ENVIRONMENT_LINUX: PATH=$PATH:/home/runner/.cargo/bin
 
       - uses: actions/upload-artifact@v3
         with:
