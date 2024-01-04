@@ -7,7 +7,7 @@ jobs:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
 
@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: dtolnay/rust-toolchain@stable
+
+      - name: show_rustc_location
+        run: which rustc
 
       - name: build_wheels
         uses: pypa/cibuildwheel@v2.16.2
