@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.17)
+
 project(rust_cmake_cibuildwheel)
+
+find_package(Python REQUIRED Interpreter Development.Module)
 
 include(FetchContent)
 
@@ -12,3 +15,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Corrosion)
 
 corrosion_import_crate(MANIFEST_PATH Cargo.toml)
+# Required to make sure Rust uses the correct path to libpython at runtime.
+corrosion_add_target_local_rustflags(rust_executable "-Clink-args=-Wl,-rpath,${Python_LIBRARY_DIRS}")
+add_dependencies(cargo-prebuild_rust_executable python_library)

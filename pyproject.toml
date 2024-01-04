@@ -1,5 +1,5 @@
 [project]
-name = "rust_cmake_cibuildwheel_example"
+name = "python_library"
 version = "0.1.0"
 requires-python = ">=3.8"
 
