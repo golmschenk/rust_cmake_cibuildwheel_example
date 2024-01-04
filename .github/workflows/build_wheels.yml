@@ -16,13 +16,13 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
-      - name: show_rustc_location
-        run: which rustc
-
       - name: build_wheels
         uses: pypa/cibuildwheel@v2.16.2
         env:
-          CIBW_ENVIRONMENT_LINUX: PATH=$PATH:/home/runner/.cargo/bin
+          CIBW_BEFORE_ALL_LINUX: >
+            curl https://sh.rustup.rs -sSf | sh -s -- -y
+            source $HOME/.cargo/env
+            rustup default stable
 
       - uses: actions/upload-artifact@v3
         with:
