@@ -16,5 +16,5 @@ FetchContent_MakeAvailable(Corrosion)
 
 corrosion_import_crate(MANIFEST_PATH Cargo.toml)
 # Required to make sure Rust uses the correct path to libpython at runtime.
-corrosion_add_target_local_rustflags(rust_executable "-Clink-args=-Wl,-rpath,${Python_LIBRARY_DIRS}")
-add_dependencies(cargo-prebuild_rust_executable python_library)
+corrosion_add_target_local_rustflags(rust_cmake_cibuildwheel_example "-Clink-args=-Wl,-rpath,${Python_LIBRARY_DIRS}")
+add_dependencies(cargo-prebuild_rust_cmake_cibuildwheel_example python_library)
